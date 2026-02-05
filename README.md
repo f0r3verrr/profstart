@@ -33,11 +33,3 @@ npx serve .
 
 Репозиторий: [github.com/f0r3verrr/profstart](https://github.com/f0r3verrr/profstart)
 
-**Включить сайт как GitHub Pages:**
-
-1. Откройте репозиторий на GitHub → **Settings** → **Pages**.
-2. В блоке **Build and deployment** в поле **Source** выберите **Deploy from a branch**.
-3. В **Branch** выберите ветку `main` и папку **/ (root)**.
-4. Нажмите **Save**.
-
-Через 1–2 минуты сайт будет доступен по адресу: **https://f0r3verrr.github.io/profstart/**
