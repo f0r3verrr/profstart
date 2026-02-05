@@ -29,11 +29,15 @@ npx serve .
 
 Сайт будет доступен по адресу http://localhost:8000
 
-## Публикация на GitHub Pages
+## GitHub Pages
 
-1. Создайте репозиторий на GitHub и загрузите файлы проекта.
-2. В настройках репозитория: **Settings** → **Pages**.
-3. В разделе **Source** выберите ветку (например, `main`) и папку `/ (root)`.
-4. Сохраните — через пару минут сайт будет доступен по адресу `https://<username>.github.io/<repo>/`.
+Репозиторий: [github.com/f0r3verrr/profstart](https://github.com/f0r3verrr/profstart)
 
-Убедитесь, что в корне репозитория лежат: `index.html`, `styles.css`, `script.js`, `logo.png`, `head_logo_fasie.png`.
+**Включить сайт как GitHub Pages:**
+
+1. Откройте репозиторий на GitHub → **Settings** → **Pages**.
+2. В блоке **Build and deployment** в поле **Source** выберите **Deploy from a branch**.
+3. В **Branch** выберите ветку `main` и папку **/ (root)**.
+4. Нажмите **Save**.
+
+Через 1–2 минуты сайт будет доступен по адресу: **https://f0r3verrr.github.io/profstart/**
