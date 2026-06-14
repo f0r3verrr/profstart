@@ -577,6 +577,32 @@ body {
 }
 
 /* ===== Партнёры ===== */
+.partners-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.partner-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(30, 58, 95, 0.06);
+  text-align: center;
+  font-weight: 600;
+  color: var(--purple-900);
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.partner-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--green-200);
+}
+
 .partners-placeholder {
   margin-top: 32px;
   padding: 48px 24px;
@@ -689,6 +715,44 @@ body {
   font-size: 0.95rem;
 }
 
+.contacts-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contacts-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contacts-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray-500);
+}
+
+.contacts-list a {
+  color: var(--purple-700);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.contacts-list a:hover {
+  color: var(--purple-500);
+  text-decoration: underline;
+}
+
+.contacts-block-details a {
+  color: var(--purple-700);
+  font-weight: 600;
+}
+
 .contacts-block-details {
   background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
 }
@@ -706,6 +770,40 @@ body {
 .requisites-block p {
   color: var(--gray-700);
   margin-bottom: 12px;
+}
+
+.requisites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.requisites-row {
+  display: grid;
+  gap: 4px;
+}
+
+@media (min-width: 640px) {
+  .requisites-row {
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+}
+
+.requisites-row dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray-500);
+}
+
+.requisites-row dd {
+  color: var(--gray-700);
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 .requisites-note {
@@ -730,31 +828,69 @@ body {
 }
 
 .footer-fasie {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: flex-start;
-}
-
-@media (min-width: 640px) {
-  .footer-fasie {
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 12px;
+  align-items: center;
+  text-align: center;
 }
 
 .footer-fasie-logo {
-  height: 88px;
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+  height: 56px;
   width: auto;
-  flex-shrink: 0;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.footer-platform-logo {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  height: 48px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 .footer-fasie-text {
-  font-size: 0.9rem;
-  line-height: 1.65;
+  grid-column: 1 / -1;
+  grid-row: 2;
+  font-size: 0.85rem;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
-  max-width: 720px;
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .footer-fasie {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 28px;
+  }
+
+  .footer-fasie-logo {
+    height: 120px;
+    max-width: none;
+    flex-shrink: 0;
+  }
+
+  .footer-fasie-text {
+    flex: 1;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .footer-platform-logo {
+    height: 110px;
+    max-width: none;
+    flex-shrink: 0;
+  }
 }
 
 .footer-bottom {
@@ -774,7 +910,8 @@ body {
 .route-card,
 .contacts-block,
 .requisites-block,
-.partners-placeholder {
+.partners-placeholder,
+.partner-card {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.7s ease forwards;
@@ -785,6 +922,12 @@ body {
 .about-card-mission { animation-delay: 0.2s; }
 .about-card-value { animation-delay: 0.35s; }
 .partners-placeholder { animation-delay: 0.2s; }
+.partner-card:nth-child(1) { animation-delay: 0.15s; }
+.partner-card:nth-child(2) { animation-delay: 0.2s; }
+.partner-card:nth-child(3) { animation-delay: 0.25s; }
+.partner-card:nth-child(4) { animation-delay: 0.3s; }
+.partner-card:nth-child(5) { animation-delay: 0.35s; }
+.partner-card:nth-child(6) { animation-delay: 0.4s; }
 .route-card:nth-child(1) { animation-delay: 0.2s; }
 .route-card:nth-child(2) { animation-delay: 0.3s; }
 .route-card:nth-child(3) { animation-delay: 0.4s; }
